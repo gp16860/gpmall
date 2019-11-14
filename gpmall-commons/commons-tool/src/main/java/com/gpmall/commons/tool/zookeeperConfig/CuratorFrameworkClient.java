@@ -24,7 +24,9 @@ public class CuratorFrameworkClient {
     }
 
     public CuratorFramework getZkCleint(){
-        if(curatorFramework == null ){
+        if(curatorFramework!=null && zooKeeperClientProperties.isSingleton())return curatorFramework;
+        return createCuratorFramework();
+        /*if(curatorFramework == null ){
             return createCuratorFramework();
         }else{
             if(zooKeeperClientProperties.isSingleton()){
@@ -32,7 +34,7 @@ public class CuratorFrameworkClient {
             }else{
                 return createCuratorFramework();
             }
-        }
+        }*/
     }
     public  CuratorFramework createCuratorFramework(){
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000,100,2000);
