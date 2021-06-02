@@ -24,8 +24,12 @@ public class CuratorFrameworkClient {
     }
 
     public CuratorFramework getZkCleint(){
-        if(curatorFramework!=null && zooKeeperClientProperties.isSingleton())return curatorFramework;
-        return createCuratorFramework();
+
+        return (curatorFramework!=null && zooKeeperClientProperties.isSingleton())? curatorFramework:createCuratorFramework();
+
+       /* if(curatorFramework!=null && zooKeeperClientProperties.isSingleton())return curatorFramework;
+        return createCuratorFramework();*/
+
         /*if(curatorFramework == null ){
             return createCuratorFramework();
         }else{

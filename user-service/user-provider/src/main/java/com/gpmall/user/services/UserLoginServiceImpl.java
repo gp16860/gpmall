@@ -48,6 +48,10 @@ public class UserLoginServiceImpl implements IUserLoginService {
             Example example = new Example(Member.class);
             example.createCriteria().andEqualTo("state",1).andEqualTo("username",request.getUserName());
 
+            /*Example.Criteria c= example.createCriteria();
+            c.andEqualTo("state",request.getState);*/
+
+
             List<Member> member = memberMapper.selectByExample(example);
             if(member==null||member.size()==0) {
                 response.setCode(SysRetCodeConstants.USERORPASSWORD_ERRROR.getCode());

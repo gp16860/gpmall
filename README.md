@@ -74,6 +74,30 @@
 | PRD                                                          |           | 存放prd需求文档，有想参与设计的同学，可以提供prd需求 |
 | wiki                                                         |           | 帮助文档，需要每一位同学贡献自己的一份力量           |
 
+
+# 项目构建步骤  
+  第一步：安装mysql、zookeeper、redis、kafka、docker、Elasticsearch   
+  第二步：mysql 执行 db_sciprt/sql脚本文件，请先创建数据库名称gpmall，脚本没有检测库和创建库的语句 
+  
+  第三步：配置本机localhost文件，参考 wiki/Hosts配置.MD  
+  
+    备注：如果mysql、zookeeper、redis、kafka没有安装在本机。
+    a.请在安装机器（如ip:192.168.1.10）上设置(Hosts配置.MD)配置，并放开端口，或者关闭防火墙。
+    b.并且在本机的localhost上修改
+    192.168.1.10 zk.gpmall.com
+    192.168.1.10 kafka.gpmall.com
+    192.168.1.10 redis.gpmall.com
+    192.168.1.10 mysql.gpmall.com
+    否则无法访问。
+    
+ 第四步：mvn clean install 构建项目   
+ 1. gpmall-parent 
+ 2. gpmall-commons  
+ 3. 其他运行项目或相关服务。
+ 
+ 备注：有好事之者，把公共引用jar包放入 gpmall-parent，没有说明，导致项目代码报错问题。引用包后导致版本问题出现运行不了等问题。
+
+
 # 项目开发进度
 
 ## 前台项目整体的规划有

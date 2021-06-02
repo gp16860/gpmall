@@ -14,6 +14,9 @@
  Date: 29/09/2019 13:13:50
 */
 
+
+
+
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
@@ -22,14 +25,14 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_address`;
 CREATE TABLE `tb_address` (
-                              `address_id` bigint(20) NOT NULL AUTO_INCREMENT,
-                              `user_id` bigint(20) DEFAULT NULL,
-                              `user_name` varchar(255) DEFAULT NULL,
-                              `tel` varchar(255) DEFAULT NULL,
-                              `street_name` varchar(255) DEFAULT NULL,
-                              `is_default` tinyint(1) DEFAULT NULL,
+                              `address_id` BIGINT(20) NOT NULL AUTO_INCREMENT,
+                              `user_id` BIGINT(20) DEFAULT NULL,
+                              `user_name` VARCHAR(255) DEFAULT NULL,
+                              `tel` VARCHAR(255) DEFAULT NULL,
+                              `street_name` VARCHAR(255) DEFAULT NULL,
+                              `is_default` TINYINT(1) DEFAULT NULL,
                               PRIMARY KEY (`address_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=INNODB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of tb_address
@@ -45,23 +48,23 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_base`;
 CREATE TABLE `tb_base` (
-                           `id` int(11) NOT NULL AUTO_INCREMENT,
-                           `web_name` varchar(255) DEFAULT NULL,
-                           `key_word` varchar(255) DEFAULT NULL,
-                           `description` varchar(255) DEFAULT NULL,
-                           `source_path` varchar(255) DEFAULT NULL,
-                           `upload_path` varchar(255) DEFAULT NULL,
-                           `copyright` varchar(1000) DEFAULT NULL,
-                           `count_code` varchar(1000) DEFAULT NULL,
-                           `has_log_notice` int(11) DEFAULT NULL,
-                           `log_notice` varchar(1000) DEFAULT NULL,
-                           `has_all_notice` int(11) DEFAULT NULL,
-                           `all_notice` varchar(1000) DEFAULT NULL,
-                           `notice` varchar(8000) DEFAULT NULL,
-                           `update_log` varchar(8000) DEFAULT NULL,
-                           `front_url` varchar(255) DEFAULT NULL,
+                           `id` INT(11) NOT NULL AUTO_INCREMENT,
+                           `web_name` VARCHAR(255) DEFAULT NULL,
+                           `key_word` VARCHAR(255) DEFAULT NULL,
+                           `description` VARCHAR(255) DEFAULT NULL,
+                           `source_path` VARCHAR(255) DEFAULT NULL,
+                           `upload_path` VARCHAR(255) DEFAULT NULL,
+                           `copyright` VARCHAR(1000) DEFAULT NULL,
+                           `count_code` VARCHAR(1000) DEFAULT NULL,
+                           `has_log_notice` INT(11) DEFAULT NULL,
+                           `log_notice` VARCHAR(1000) DEFAULT NULL,
+                           `has_all_notice` INT(11) DEFAULT NULL,
+                           `all_notice` VARCHAR(1000) DEFAULT NULL,
+                           `notice` VARCHAR(8000) DEFAULT NULL,
+                           `update_log` VARCHAR(8000) DEFAULT NULL,
+                           `front_url` VARCHAR(255) DEFAULT NULL,
                            PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tb_base
@@ -75,18 +78,18 @@ COMMIT;
 -- ----------------------------
 DROP TABLE IF EXISTS `tb_comment`;
 CREATE TABLE `tb_comment` (
-                              `id` varchar(50) NOT NULL COMMENT '商品评论主键',
-                              `order_id` varchar(50) NOT NULL COMMENT '订单id',
-                              `item_id` bigint(20) NOT NULL COMMENT '商品id',
-                              `star` tinyint(4) DEFAULT '5' COMMENT '星级',
-                              `type` tinyint(4) DEFAULT '1' COMMENT '类型: 1好评 2中评 3差评',
-                              `is_anoymous` bit(1) DEFAULT b'0' COMMENT '是否匿名评价',
-                              `content` varchar(512) DEFAULT '' COMMENT '评价内容',
-                              `buyer_nick` varchar(50) DEFAULT NULL COMMENT '买家昵称',
-                              `comment_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '评价时间',
-                              `is_public` bit(1) DEFAULT b'1' COMMENT '是否公开',
-                              `is_valid` bit(1) DEFAULT b'0' COMMENT '是否通过审核',
-                              `validation_user_id` bigint(20) DEFAULT NULL COMMENT '审核人id',
+                              `id` VARCHAR(50) NOT NULL COMMENT '商品评论主键',
+                              `order_id` VARCHAR(50) NOT NULL COMMENT '订单id',
+                              `item_id` BIGINT(20) NOT NULL COMMENT '商品id',
+                              `star` TINYINT(4) DEFAULT '5' COMMENT '星级',
+                              `type` TINYINT(4) DEFAULT '1' COMMENT '类型: 1好评 2中评 3差评',
+                              `is_anoymous` BIT(1) DEFAULT b'0' COMMENT '是否匿名评价',
+                              `content` VARCHAR(512) DEFAULT '' COMMENT '评价内容',
+                              `buyer_nick` VARCHAR(50) DEFAULT NULL COMMENT '买家昵称',
+                              `comment_time` DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '评价时间',
+                              `is_public` BIT(1) DEFAULT b'1' COMMENT '是否公开',
+                              `is_valid` BIT(1) DEFAULT b'0' COMMENT '是否通过审核',
+                              `validation_user_id` BIGINT(20) DEFAULT NULL COMMENT '审核人id',
                               `validation_time` datetime DEFAULT NULL COMMENT '审核时间',
                               `validation_suggestion` varchar(512) DEFAULT NULL COMMENT '审核意见',
                               `is_top` bit(1) DEFAULT b'0' COMMENT '是否置顶',

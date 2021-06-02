@@ -7,6 +7,7 @@
         <artifactId>gpmall-parent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <groupId>com.gpmall.order</groupId>
     <artifactId>order-provider</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -84,14 +85,13 @@
             <groupId>com.gpmall.user</groupId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-
         <dependency>
             <groupId>org.redisson</groupId>
             <artifactId>redisson</artifactId>
         </dependency>
         <dependency>
-            <artifactId>shopping-api</artifactId>
             <groupId>com.gpmall.shopping</groupId>
+            <artifactId>shopping-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
